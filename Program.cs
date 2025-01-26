@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+// See https://aka.ms/new-console-template for more information
 using System;
 using System.Collections;
 using System.Data.SqlTypes;
@@ -35,24 +35,24 @@ class SnekGame
 
     private static void StartScreen()
     {
-        char[] WelcomeStringArray = "Welcome to snakey <3".ToCharArray();
-
-        foreach (char c in WelcomeStringArray)
-        {
-            Console.Write(c);
-            Thread.Sleep(35);
-        }
+        DrawSagge("Welcome to snek game <3", 35);
         Console.WriteLine();
-        char[] SecondWelcomeStringArray = "Press any key to start".ToCharArray();
-
-        foreach (char c in SecondWelcomeStringArray)
-        {
-            Console.Write(c);
-            Thread.Sleep(20);
-        }
+        DrawSagge("Press any key to start!",20);
+        
         
         Console.ReadKey();
         Console.Clear();
+    }
+
+    public static void DrawSagge(string Message, int Delay = 20)
+    {
+        char[] Charray = Message.ToCharArray();
+
+        foreach (char c in Charray)
+        {
+            Console.Write(c);
+            Thread.Sleep(Delay);
+        }
     }
 
     public static void GameOver()
